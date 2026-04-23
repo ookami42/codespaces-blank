@@ -10,9 +10,9 @@ class CifraDeCesar:
     # Setter
     def set_alfabeto(self, novo_alfabeto: str)-> None:
         if not isinstance(novo_alfabeto, str):
-            raise ValueError("O alfabeto deve ser uma string.")
+            raise ValueError('O alfabeto deve ser uma string.')
         if len(novo_alfabeto) == 0:
-            raise ValueError("O alfabeto não pode ser vazio.")
+            raise ValueError('O alfabeto não pode ser vazio.')
         self.tamanho_alfabeto = len(novo_alfabeto)
         self._alfabeto = novo_alfabeto
 
@@ -31,7 +31,7 @@ class CifraDeCesar:
         cifra = ''.join(self.desloca(simbolo, chave) for simbolo in texto)
         return cifra
     
-    def decodifica(self, texto: str, chave: int) -> str:
+    def decodifica(self, cifra: str, chave: int) -> str:
         chave_complementar = (-chave) % self._tamanho_alfabeto
-        texto_plano = self.codifica(texto, chave_complementar)
+        texto_plano = self.codifica(cifra, chave_complementar)
         return texto_plano

@@ -47,9 +47,9 @@ class CifraDeVigerere(CifraDeCesar):
         cifra = self.aplica_chave(texto)
         return cifra
 
-    def decodifica(self, texto, chave) -> str:
+    def decodifica(self, cifra: str, chave: str) -> str:
         self.set_chave_decode(chave)
-        texto_plano = self.aplica_chave(texto)
+        texto_plano = self.aplica_chave(cifra)
         return texto_plano
             
 

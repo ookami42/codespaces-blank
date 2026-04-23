@@ -1,6 +1,7 @@
-import pytest
 from CifraDeVigenere import CifraDeVigerere
 from Util import le_arquivo
+import pytest
+
 
 @pytest.fixture
 def vigenere():
